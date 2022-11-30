@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import useMediaQuery from '../public/hooks/useMediaQuery'
 import {HiOutlineDotsVertical} from 'react-icons/hi'
 import Image from 'next/image'
+import Link from 'next/link'
 
 
 const nav = {
@@ -40,18 +41,18 @@ const NavBar = ( {isTopOfPage}: any) => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const navbarBackground = isTopOfPage ? "bg-[#101010]" : "bg-[#101010]";
   return (
-    <motion.header className={`${navbarBackground} md:sticky top-0 w-full md:h-[115px] h-[90px]  z-10 flex justify-center items-center `} layout variants={nav} initial='hidden' animate='visible'>
+    <motion.header className='sticky top-0 w-full md:h-[115px] h-[90px]  z-10 flex justify-center items-center' layout variants={nav} initial='hidden' animate='visible'>
     <div className='flex items-center justify-between w-full h-full max-w-[1440px] mx-auto px-10 bg-opacity-80 shadow-sm bg-clip-padding blur-backdrop-filter '>
       <>Logo</>
       {/*Desktop Version */}
       {isDesktop ? (
           <><div className='xl:ml-[100px] md:ml-12'>
             <ul className='flex'>
-              <li className='p-5 font-bold text-sm lg:text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>Home</li>
-              <li className='p-5 font-bold text-sm lg:text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>About Us</li>
-              <li className='p-5 font-bold text-sm lg:text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>Marketing</li>
-              <li className='p-5 font-bold text-sm lg:text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>Tech</li>
-              <li className='p-5 font-bold text-sm lg:text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>Blog</li>
+              <li className='p-5 font-bold text-sm lg:text-lg '> <Link href='/' className='hover:text-[#0071FF] duration-200'>Home</Link></li>
+              <li className='p-5 font-bold text-sm lg:text-lg '> <Link href='/' className='hover:text-[#0071FF] duration-200'>About Us</Link></li>
+              <li className='p-5 font-bold text-sm lg:text-lg '> <Link href='/' className='hover:text-[#0071FF] duration-200'>Marketing</Link></li>
+              <li className='p-5 font-bold text-sm lg:text-lg '> <Link href='/' className='hover:text-[#0071FF] duration-200'>Tech</Link></li>
+              <li className='p-5 font-bold text-sm lg:text-lg '> <Link href='/' className='hover:text-[#0071FF] duration-200'>Blog</Link></li>
             </ul>
           </div><div className=''>
               <button className='border-2 border-[#0071FF] bg-[#0071FF] rounded-lg lg:py-2 py-1 lg:px-7 px-5 group hover:bg-white transition duration-200'>
@@ -60,7 +61,7 @@ const NavBar = ( {isTopOfPage}: any) => {
             </div></>
       ) : (
         <button
-            className="rounded-full bg-red p-2"
+            className="rounded-full p-2"
             onClick={() => setIsMenuToggled(!isMenuToggled)}
           >
             <HiOutlineDotsVertical size={25}/>
@@ -78,12 +79,12 @@ const NavBar = ( {isTopOfPage}: any) => {
                 Logo
                 </>
                 <ul className='mt-20'>
-                  <li className='px-10 py-2 font-bold text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>Home</li>
-                  <li className='px-10 py-2 font-bold text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>About Us</li>
-                  <li className='px-10 py-2 font-bold text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>Marketing</li>
-                  <li className='px-10 py-2 font-bold text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>Tech</li>
-                  <li className='px-10 py-2 font-bold text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>Blog</li>
-                  <li className='px-10 py-2 font-bold text-lg hover:text-[#0071FF] duration-200 cursor-pointer'>Contact Us</li>
+                  <li className='px-10 py-2 font-bold text-lg'><Link href='/' className='hover:text-[#0071FF] duration-200'>Home</Link></li>
+                  <li className='px-10 py-2 font-bold text-lg'><Link href='/' className='hover:text-[#0071FF] duration-200'>About Us</Link></li>
+                  <li className='px-10 py-2 font-bold text-lg'><Link href='/' className='hover:text-[#0071FF] duration-200'>Marketing</Link></li>
+                  <li className='px-10 py-2 font-bold text-lg'><Link href='/' className='hover:text-[#0071FF] duration-200'>Tech</Link></li>
+                  <li className='px-10 py-2 font-bold text-lg'><Link href='/' className='hover:text-[#0071FF] duration-200'>Blog</Link></li>
+                  <li className='px-10 py-2 font-bold text-lg'><Link href='/' className='hover:text-[#0071FF] duration-200'>Contact Us</Link></li>
                 </ul>
               </div>
             </motion.div>
