@@ -1,14 +1,30 @@
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import integrate from '../public/assets/Integrate.png'
 import partylogo from '../public/assets/logos4.png'
 import useMediaQuery from '../public/hooks/useMediaQuery'
 
+const imgVariants = {
+    offscreen: {
+      y: 300,
+      opacity:0
+    },
+    onscreen: {
+      y: 0,
+      opacity:1,
+      transition: {
+      ease: 'easeInOut',
+      duration:1
+      }
+    }
+  };
+
 const Image3 = () => {
     const isLarge = useMediaQuery("(min-width: 768px)");
     return (
-      <section className='bg-black py-14 xl:px-0 px-2'>
-          <div className='max-w-[1440px] mx-auto'>
+      <section className='bg-black py-14 xl:px-0 px-2 snap-center'>
+          <motion.div className='max-w-[1440px] mx-auto' variants={imgVariants} initial='offscreen' whileInView='onscreen' viewport={{amount:0.5, once:true}}>
               <div className='relative border flex flex-col border-transparent overflow-hidden rounded-xl'>
                   <Image src={integrate} alt='/' className=' object-cover md:h-[720px] md:object-top md:ml-20 lg:ml-0 rounded-xl xl:scale-100 md:scale-125'/>
                   {/* If Screens > 768px else Mobile */}
@@ -37,7 +53,7 @@ const Image3 = () => {
                   }
                   
               </div>
-          </div>
+          </motion.div>
       </section>
     )
 }

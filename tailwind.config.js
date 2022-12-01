@@ -2,7 +2,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-  content: [
+  content: [,
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -12,7 +12,8 @@ module.exports = {
         'oxy' : ['Oxygen', 'sans-serif'],
         'merri': ['Merriweather\\ Sans', 'sans-serif'],
         'bowl' : ['Bowlby\\ One', 'cursive'],
-        'inter': ['Inter', 'sans-serif']
+        'inter': ['Inter', 'sans-serif'],
+        'urban' : ['Urbanist', 'sans-serif'],
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
@@ -33,5 +34,6 @@ module.exports = {
         { values: theme('textShadow') }
       )
     }),
+
   ],
 }

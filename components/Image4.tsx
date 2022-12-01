@@ -1,12 +1,29 @@
 import React from 'react'
 import Image from 'next/image'
-import useMediaQuery from '../public/hooks/useMediaQuery';
+import { motion } from 'framer-motion';
+import useMediaQuery from '../public/hooks/useMediaQuery'
 import shuttle from '../public/assets/Badminton.png'
+
+const imgVariants = {
+    offscreen: {
+      y: 300,
+      opacity:0
+    },
+    onscreen: {
+      y: 0,
+      opacity:1,
+      transition: {
+      ease: 'easeInOut',
+      duration:1
+      }
+    }
+  };
+
 const Image4 = () => {
     const isLarge = useMediaQuery("(min-width: 768px)");
     return (
-      <section className='bg-black md:py-14 pb-14 xl:px-0 px-2'>
-          <div className='max-w-[1440px] mx-auto'>
+      <section className='bg-black md:py-14 pb-14 xl:px-0 px-2 snap-center'>
+          <motion.div className='max-w-[1440px] mx-auto' variants={imgVariants} initial='offscreen' whileInView='onscreen' viewport={{amount:0.5, once:true}}>
               <div className='relative border flex flex-col border-transparent overflow-hidden rounded-xl'>
                   <Image src={shuttle} alt='/' className=' object-cover md:h-[720px] md:object-bottom md:ml-20 md:mb-4 lg:mb-0 lg:ml-0 rounded-xl xl:scale-100 md:scale-125'/>
                   {/* If Screens > 768px else Mobile */}
@@ -33,7 +50,7 @@ const Image4 = () => {
                   }
                   
               </div>
-          </div>
+          </motion.div>
       </section>
     )
 }

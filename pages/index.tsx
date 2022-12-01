@@ -10,6 +10,9 @@ import Image3 from '../components/Image3'
 import Image4 from '../components/Image4'
 import Ideal from '../components/Ideal'
 import WhyWA from '../components/WhyWA'
+import FAQ from '../components/FAQ'
+import Form from '../components/Form'
+import Footer from '../components/Footer'
 
 export default function Home() {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -30,7 +33,7 @@ export default function Home() {
       <Head>
         <title>WhatsApp Chatbot | Roughpaper</title>
         <meta name="description" content="Send and receive data in real-time on your favourite 3rd party apps from WhatsApp." />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/" />
       </Head>
       <NavBar isTopOfPage={isTopOfPage}/>
       <Hero/>
@@ -40,6 +43,9 @@ export default function Home() {
       <Image3/>
       <Image4/>
       <WhyWA/>
+      <FAQ/>
+      <Form/>
+      <Footer/>
     </div>
   )
 }

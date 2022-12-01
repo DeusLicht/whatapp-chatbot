@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-    @apply text-white scroll-smooth bg-black font-inter
+    @apply text-white scroll-smooth bg-black font-inter snap-y h-screen snap-mandatory overflow-scroll
   }
 
 
