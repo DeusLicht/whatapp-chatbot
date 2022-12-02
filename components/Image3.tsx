@@ -14,7 +14,7 @@ const imgVariants = {
       y: 0,
       opacity:1,
       transition: {
-      ease: 'easeInOut',
+      ease: 'easeOut',
       duration:1
       }
     }
@@ -23,9 +23,9 @@ const imgVariants = {
 const Image3 = () => {
     const isLarge = useMediaQuery("(min-width: 768px)");
     return (
-      <section className='bg-black py-14 xl:px-0 px-2 snap-center'>
-          <motion.div className='max-w-[1440px] mx-auto' variants={imgVariants} initial='offscreen' whileInView='onscreen' viewport={{amount:0.5, once:true}}>
-              <div className='relative border flex flex-col border-transparent overflow-hidden rounded-xl'>
+      <section className='bg-black py-14 xl:px-0 px-2 snap-center '>
+          <motion.div className='max-w-[1440px] mx-auto overflow-hidden' initial='offscreen' whileInView='onscreen' viewport={{amount:0.5, once:true}}>
+              <motion.div className='relative border flex flex-col border-transparent overflow-hidden rounded-xl' variants={imgVariants} >
                   <Image src={integrate} alt='/' className=' object-cover md:h-[720px] md:object-top md:ml-20 lg:ml-0 rounded-xl xl:scale-100 md:scale-125'/>
                   {/* If Screens > 768px else Mobile */}
                   {isLarge ? (
@@ -52,7 +52,7 @@ const Image3 = () => {
                   )
                   }
                   
-              </div>
+              </motion.div>
           </motion.div>
       </section>
     )
