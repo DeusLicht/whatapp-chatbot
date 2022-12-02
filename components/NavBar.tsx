@@ -4,6 +4,8 @@ import useMediaQuery from '../public/hooks/useMediaQuery'
 import {HiOutlineDotsVertical} from 'react-icons/hi'
 import Image from 'next/image'
 import Link from 'next/link'
+import Logo from '../public/assets/RPLogoWhite.png'
+import LogoB from '../public/assets/RPLogoBlack.png'
 
 
 const nav = {
@@ -40,10 +42,10 @@ const NavBar = ( {isVisible}: any) => {
   return (
     <motion.header className={`sticky ${isVisible ? 'top-0' : ''} w-full md:h-[100px] h-[90px]  z-10 flex justify-center items-center`} layout variants={nav} initial='hidden' animate='visible'>
       <div className='flex items-center justify-between w-full h-full max-w-[1600px] mx-auto px-10 bg-opacity-80 shadow-sm bg-clip-padding blur-backdrop-filter '>
-        <>Logo</>
+        <Link href='/' ><Image src={Logo} alt='/'className='h-[100px] w-auto' /></Link>
         {/*Desktop Version */}
         {isDesktop ? (
-          <><div className='xl:ml-[100px] md:ml-12'>
+          <><div className=''>
             <ul className='flex'>
               <li className='p-5 font-bold text-sm lg:text-lg '> <Link href='/' className='hover:text-[#0071FF] duration-200'>Home</Link></li>
               <li className='p-5 font-bold text-sm lg:text-lg '> <Link href='/' className='hover:text-[#0071FF] duration-200'>About Us</Link></li>
@@ -76,10 +78,8 @@ const NavBar = ( {isVisible}: any) => {
           <motion.div key='child1' className="fixed left-0 bottom-0 h-full w-full bg-[#191919] bg-opacity-25 shadow-sm bg-clip-padding blur-backdrop-filter z-15" onClick={() => setIsMenuToggled(!isMenuToggled)} variants={side} initial={{left: '-100vh'}} animate={{left: 0,transition:{duration:1}}} exit={{left: '-200vh',transition:{duration:1,delay:0.5}}}>
             <motion.div key='child2' className='fixed flex flex-col left-0 bottom-0 h-full w-[60%] bg-white' initial={{left: '-100vh'}} animate={{left: 0,transition:{duration:1, delay:0.5}}} exit={{left: '-200vh', transition:{duration:1}}}>
               <div className='mr-auto text-black font-bold text-xl'>
-                <>
-                Logo
-                </>
-                <ul className='mt-20'>
+                <Link href='/' ><Image src={LogoB} alt='/'className='h-[150px] w-auto px-10 mt-10' /></Link>
+                <ul className=''>
                   <li className='px-10 py-2 font-bold text-lg'><Link href='/' className='hover:text-[#0071FF] duration-200'>Home</Link></li>
                   <li className='px-10 py-2 font-bold text-lg'><Link href='/' className='hover:text-[#0071FF] duration-200'>About Us</Link></li>
                   <li className='px-10 py-2 font-bold text-lg'><Link href='/' className='hover:text-[#0071FF] duration-200'>Marketing</Link></li>

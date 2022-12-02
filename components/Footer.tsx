@@ -4,14 +4,15 @@ import Image from 'next/image'
 import {FaFacebook} from 'react-icons/fa'
 import {AiOutlineTwitter, AiOutlineInstagram} from 'react-icons/ai'
 import {BsLinkedin} from 'react-icons/bs'
+import Logo from '../public/assets/RPLogoWhite.png'
 
 const Footer = () => {
   return (
     <section className='bg-black pt-10 snap-start'>
         <div className='mx-auto w-full max-w-[1600px] py-5 px-2'>
             <div className='flex md:flex-row flex-col justify-between mb-5 md:gap-0 '>
-                <div className='flex flex-col gap-4 px-5 py-5'>
-                    <>Logo</>
+                <div className='flex flex-col px-5 py-5'>
+                    <Link href='/' ><Image src={Logo} alt='/'className='h-[100px] w-auto' /></Link>
                     <h1 className='font-urban font-black text-6xl'>
                         Do & <br/> Inspire
                     </h1>
