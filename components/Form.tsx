@@ -8,7 +8,7 @@ import {BsLinkedin} from 'react-icons/bs'
 const Form = () => {
   const isDesktop = useMediaQuery("(min-width: 1200px)");
   return (
-    <section className='bg-black py-14 md:px-3 px-5 snap-center'>
+    <section className='bg-black py-28 md:px-3 px-5 md:snap-center snap-start'>
       {isDesktop ? (
         <div className='max-w-[1200px] mx-auto flex flex-row items-center gap-14'>
         <div className='h-[500px] w-[525px] bg-[#0071FF] flex justify-center rounded-lg py-10 '>

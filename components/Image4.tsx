@@ -22,7 +22,7 @@ const imgVariants = {
 const Image4 = () => {
     const isLarge = useMediaQuery("(min-width: 768px)");
     return (
-      <section className='bg-black md:py-14 pb-14 xl:px-0 px-2 snap-center'>
+      <section className='bg-black py-14 xl:px-0 px-2 snap-center'>
           <motion.div className='max-w-[1440px] mx-auto' variants={imgVariants} initial='offscreen' whileInView='onscreen' viewport={{amount:0.5, once:true}}>
               <div className='relative border flex flex-col border-transparent overflow-hidden rounded-xl'>
                   <Image src={shuttle} alt='/' className=' object-cover md:h-[720px] md:object-bottom md:ml-20 md:mb-4 lg:mb-0 lg:ml-0 rounded-xl xl:scale-100 md:scale-125'/>

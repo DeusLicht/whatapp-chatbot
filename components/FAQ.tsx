@@ -2,7 +2,7 @@ import React from 'react'
 
 const FAQ = () => {
   return (
-    <section className='bg-black pt-14 pb-24 md:px-3 px-5 snap-center'>
+    <section className='bg-black pt-28 pb-24 md:px-3 px-5 md:snap-center snap-start'>
       <div className='max-w-[1200px] mx-auto flex flex-col  gap-y-3'>
         <div className='flex items-center justify-center'>
           <p className='text-[#0071FF] text-center text-lg lg:text-xl font-semibold'>
@@ -191,7 +191,7 @@ const FAQ = () => {
         {/* 9th FAQ */}
         <div className=' relative md:w-1/2 md:mx-auto w-auto overflow-hidden'>
                 <input type='checkbox' className='absolute top-0 inset-x-0 w-full h-16 opacity-0 z-10  cursor-pointer peer'/>
-                <div className=' h-16 px-10 flex flex-col justify-center rounded-lg transition-all duration-500 text-black bg-white peer-checked:bg-[#0071FF] peer-checked:text-white'>
+                <div className=' sm:h-16 h-20 px-10 flex flex-col justify-center rounded-lg transition-all duration-500 text-black bg-white peer-checked:bg-[#0071FF] peer-checked:text-white'>
                     <h2 className='font-bowl'>
                         Can I use WhatsApp App & WhatsApp Business API on the same number? 
                     </h2>

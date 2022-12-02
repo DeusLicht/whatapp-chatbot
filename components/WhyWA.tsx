@@ -2,7 +2,7 @@ import React from 'react'
 
 const WhyWA = () => {
   return (
-    <section className='bg-black py-14 md:px-3 px-5 snap-center'>
+    <section className='bg-black py-32 md:px-3 px-5 md:snap-center snap-start'>
         <div className='max-w-[1200px] mx-auto flex flex-col items-center gap-y-3'>
             <div className='flex flex-col items-center justify-center gap-y-3 flex-grow'>
                 <p className='text-[#0071FF] text-center text-md lg:text-xl font-semibold'>
