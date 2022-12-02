@@ -26,7 +26,7 @@ const Image1 = () => {
     <section className='bg-black py-14 xl:px-0 px-2 snap-center'>
         <motion.div className='max-w-[1440px] mx-auto overflow-hidden' initial='offscreen' whileInView='onscreen' viewport={{amount:0.5, once:true}} >
             <motion.div className='relative border flex flex-col border-transparent overflow-hidden rounded-xl'  variants={imgVariants} >
-                <Image src={img1} alt='/'  className=' object-cover md:h-[720px] md:object-center rounded-xl xl:scale-100 md:scale-125'/>
+                <Image src={img1} alt='/'  className=' object-cover md:h-[720px] md:object-center rounded-xl xl:scale-100 md:scale-125' priority/>
                 {/* If Screens > 768px else Mobile */}
                 {isLarge ? (
                     <div className='absolute top-[10%] left-[5%] w-[35%]'>
