@@ -16,17 +16,26 @@ import Footer from '../components/Footer'
 
 export default function Home() {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
-  const [isTopOfPage, setIsTopOfPage] = useState(true);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsTopOfPage(true);
+
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true)
+
+  const handleScroll = () => {
+      const currentScrollPos = window.scrollY
+
+      if(currentScrollPos > prevScrollPos){
+          setVisible(false)
+      }else{
+          setVisible(true)
       }
-      if (window.scrollY !== 0) setIsTopOfPage(false);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
+      setPrevScrollPos(currentScrollPos)
+  }
+
+  useEffect( () => {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll)
+  })
 
   return (
     <div>
@@ -35,7 +44,7 @@ export default function Home() {
         <meta name="description" content="Send and receive data in real-time on your favourite 3rd party apps from WhatsApp." />
         <link rel="icon" href="/" />
       </Head>
-      <NavBar isTopOfPage={isTopOfPage}/>
+      <NavBar isVisible={visible}/>
       <Hero/>
       <Ideal/>
       <Image1/>

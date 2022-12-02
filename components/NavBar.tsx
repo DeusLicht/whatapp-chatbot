@@ -9,12 +9,10 @@ import Link from 'next/link'
 const nav = {
 
   hidden: {
-    y:-50,
   },
   visible:{
-    y:0,
     transition:{
-      duration:0.2
+      duration:0.1
     }
   }
 
@@ -36,16 +34,15 @@ const side = {
 
 }
 
-const NavBar = ( {isTopOfPage}: any) => {
+const NavBar = ( {isVisible}: any) => {
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
-  const navbarBackground = isTopOfPage ? "bg-[#101010]" : "bg-[#101010]";
   return (
-    <motion.header className='sticky top-0 w-full md:h-[115px] h-[90px]  z-10 flex justify-center items-center' layout variants={nav} initial='hidden' animate='visible'>
-    <div className='flex items-center justify-between w-full h-full max-w-[1600px] mx-auto px-10 bg-opacity-80 shadow-sm bg-clip-padding blur-backdrop-filter '>
-      <>Logo</>
-      {/*Desktop Version */}
-      {isDesktop ? (
+    <motion.header className={`sticky ${isVisible ? 'top-0' : ''} w-full md:h-[100px] h-[90px]  z-10 flex justify-center items-center`} layout variants={nav} initial='hidden' animate='visible'>
+      <div className='flex items-center justify-between w-full h-full max-w-[1600px] mx-auto px-10 bg-opacity-80 shadow-sm bg-clip-padding blur-backdrop-filter '>
+        <>Logo</>
+        {/*Desktop Version */}
+        {isDesktop ? (
           <><div className='xl:ml-[100px] md:ml-12'>
             <ul className='flex'>
               <li className='p-5 font-bold text-sm lg:text-lg '> <Link href='/' className='hover:text-[#0071FF] duration-200'>Home</Link></li>
@@ -62,7 +59,7 @@ const NavBar = ( {isTopOfPage}: any) => {
               </button>
             </Link>
           </div></>
-      ) : (
+        ) : (
           <button
             className="rounded-full p-2"
             onClick={() => setIsMenuToggled(!isMenuToggled)}
@@ -72,6 +69,7 @@ const NavBar = ( {isTopOfPage}: any) => {
       )
       }
       </div>
+      {/*Mobile & Tablets Version <768px width screens */}
       <AnimatePresence>
       {!isDesktop && isMenuToggled && (
         <>
