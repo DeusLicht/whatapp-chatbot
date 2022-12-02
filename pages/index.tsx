@@ -42,7 +42,7 @@ export default function Home() {
       <Head>
         <title>WhatsApp Chatbot | Roughpaper</title>
         <meta name="description" content="Send and receive data in real-time on your favourite 3rd party apps from WhatsApp." />
-        <link rel="icon" href="/" />
+        <link rel="icon" href='assets/HeaderIconRP.png' />
       </Head>
       <NavBar isVisible={visible}/>
       <Hero/>

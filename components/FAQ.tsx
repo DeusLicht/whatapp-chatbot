@@ -191,7 +191,7 @@ const FAQ = () => {
         </div>
         {/* 9th FAQ */}
         <div className=' relative md:w-1/2 md:mx-auto w-auto overflow-hidden'>
-                <input type='checkbox' className='absolute top-0 inset-x-0 w-full h-16 opacity-0 z-10  cursor-pointer peer'/>
+                <input type='checkbox' className='absolute top-0 inset-x-0 w-full sm:h-16  h-20 opacity-0 z-10  cursor-pointer peer'/>
                 <div className=' sm:h-16 h-20 px-10 flex flex-col justify-center rounded-lg transition-all duration-500 text-black bg-white peer-checked:bg-[#0071FF] peer-checked:text-white'>
                     <h2 className='font-bowl'>
                         Can I use WhatsApp App & WhatsApp Business API on the same number? 
