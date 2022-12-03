@@ -4,15 +4,17 @@ import NavBar from "../components/NavBar";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { useState, useEffect } from "react";
 import Hero from "../components/Hero";
-import Image1 from "../components/Image1";
-import Image2 from "../components/Image2";
-import Image3 from "../components/Image3";
-import Image4 from "../components/Image4";
 import Ideal from "../components/Ideal";
 import WhyWA from "../components/WhyWA";
 import FAQ from "../components/FAQ";
 import Form from "../components/Form";
 import Footer from "../components/Footer";
+import ImageSection from "../components/ImageSection";
+
+import Accelerate from "../public/assets/Accelerate.png";
+import Manage from "../public/assets/young-woman-eating-croissants-cafe.jpg";
+import Integrate from "../public/assets/Integrate.png";
+import PartyLogo from "../public/assets/logos4.png";
 
 export default function Home() {
 	const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
@@ -50,10 +52,7 @@ export default function Home() {
 			<NavBar isVisible={visible} />
 			<Hero />
 			<Ideal />
-			<Image1 />
-			<Image2 />
-			<Image3 />
-			<Image4 />
+			<ImageSection />
 			<WhyWA />
 			<FAQ />
 			<Form />

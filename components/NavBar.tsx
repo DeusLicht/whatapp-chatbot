@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { HiOutlineDotsVertical } from "react-icons/hi";
@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../public/assets/RPLogoWhite.png";
 import LogoB from "../public/assets/RPLogoBlack.png";
+import useToggle from "../hooks/useToggle";
 
 const nav = {
 	hidden: {},
@@ -31,7 +32,7 @@ const side = {
 };
 
 const NavBar = ({ isVisible }: any) => {
-	const [isMenuToggled, setIsMenuToggled] = useState(false);
+	const {status: isMenuToggled, toggleStatus:IsMenuToggled} = useToggle();
 	const isDesktop = useMediaQuery("(min-width: 768px)");
 	return (
 		<motion.header
@@ -96,7 +97,7 @@ const NavBar = ({ isVisible }: any) => {
 				) : (
 					<button
 						className='rounded-full p-2'
-						onClick={() => setIsMenuToggled(!isMenuToggled)}>
+						onClick={IsMenuToggled}>
 						<HiOutlineDotsVertical size={25} />
 					</button>
 				)}
@@ -108,7 +109,7 @@ const NavBar = ({ isVisible }: any) => {
 						<motion.div
 							key='child1'
 							className='fixed left-0 bottom-0 h-full w-full bg-[#191919] bg-opacity-25 shadow-sm bg-clip-padding blur-backdrop-filter z-15'
-							onClick={() => setIsMenuToggled(!isMenuToggled)}
+							onClick={IsMenuToggled}
 							variants={side}
 							initial={{ left: "-100vh" }}
 							animate={{ left: 0, transition: { duration: 1 } }}
