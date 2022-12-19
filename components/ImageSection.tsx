@@ -73,7 +73,7 @@ const imgVariants: Variants = {
 	},
 };
 
-const ImageSection = (props: any) => {
+const ImageSection = () => {
 	const isLarge = useMediaQuery("(min-width: 768px)");
 	return (
 		<section className='bg-black py-14 xl:px-0 px-2 snap-center flex flex-col gap-28'>
